@@ -10,16 +10,6 @@ app.controller('MainCtrl', function($scope, Myservice){
 app.controller('MapCtrl', function($scope, Map, Myservice) {
     $scope.Place = Myservice;
 
-    var options = {
-        center: new google.maps.LatLng(40.7127837, -74.00594130000002),
-        zoom: 13,
-        disableDefaultUI: true
-    };
-    $scope.map = new google.maps.Map(
-        document.getElementById("map"), options
-    );
-    $scope.places = new google.maps.places.PlacesService(this.map);
-
     $scope.search = function() {
         $scope.apiError = false;
         Map.search($scope.searchPlace)
@@ -38,10 +28,9 @@ app.controller('MapCtrl', function($scope, Map, Myservice) {
     };
 
     $scope.submit = function() {
-    	// send data
+    	// send jsonData
         var jsonData = JSON.stringify(Myservice);
-
     };
 
-
+    Map.init();
 });
