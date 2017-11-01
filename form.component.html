@@ -1,17 +1,17 @@
-<div ng-controller="formController">
+<div >
     <form name="form" novalidate
           ng-submit="send()">
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" name="username" id="username" class="form-control" ng-model="User.username" required />
+            <input type="text" name="username" id="username" class="form-control" ng-model="user.username" required />
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="text" name="email" id="email" class="form-control" ng-model="User.email" required />
+            <input type="text" name="email" id="email" class="form-control" ng-model="user.email" required />
         </div>
         <div class="form-group">
             <label for="phone">Phone</label>
-            <input type="phone" name="phone" id="phone" class="form-control" ng-model="User.phone" required />
+            <input type="phone" name="phone" id="phone" class="form-control" ng-model="user.phone" required />
         </div>
     </form>
 
@@ -20,9 +20,9 @@
     </div>
 
     <div ng-show="visibleLocation">
-        <select-location ></select-location>
+        <location-directive ></location-directive>
     </div>
 
     <button class="btn btn-primary"
-        ng-disabled="form.$invalid || searchForm.$invalid" ng-click="submit()">Submit</button>
+            ng-disabled="form.$invalid || searchForm.$invalid" ng-click="submit()">Submit</button>
 </div>

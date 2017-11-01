@@ -1,2 +1,2 @@
-angular.module("CombineModule", ["formModule", "selectLocationModule"]);
+angular.module("app", []);
 
