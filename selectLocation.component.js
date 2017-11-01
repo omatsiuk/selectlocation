@@ -1,19 +1,20 @@
-function selectLocationController($scope, myService, myForm) {
-    $scope.Place = myForm;
+function selectLocationController(myService, myForm) {
+    var ctrl = this;
+    ctrl.Place = myForm;
 
-    $scope.search = function() {
-        $scope.apiError = false;
-        myService.searchAddress($scope.searchPlace)
+    ctrl.search = function() {
+        ctrl.apiError = false;
+        myService.searchAddress(ctrl.searchPlace)
             .then(
                 function(res) {
                     myService.addMarker(res);
-                    $scope.Place.name = res.name;
-                    $scope.Place.lat = res.geometry.location.lat();
-                    $scope.Place.lng = res.geometry.location.lng();
+                    ctrl.Place.name = res.name;
+                    ctrl.Place.lat = res.geometry.location.lat();
+                    ctrl.Place.lng = res.geometry.location.lng();
                 },
                 function(status) {
-                    $scope.apiError = true;
-                    $scope.Place.apiStatus = status;
+                    ctrl.apiError = true;
+                    ctrl.Place.apiStatus = status;
                 }
             );
     };
