@@ -38,6 +38,21 @@ angular
         };
 
         return Map;
+    })
+    .service('myForm', function () {
+        var user = {
+            username:'',
+            email:'',
+            phone:''
+        };
+        return user;
+
+        var Place = {
+            name:'',
+            lat:'',
+            lng:''
+        };
+        return Place;
     });
 
 
