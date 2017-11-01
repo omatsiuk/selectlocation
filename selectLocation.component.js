@@ -1,4 +1,4 @@
-function selectLocationController(myService, myForm) {
+function selectLocationController(myService, myForm, $timeout) {
     var ctrl = this;
     ctrl.Place = myForm;
 
@@ -19,7 +19,7 @@ function selectLocationController(myService, myForm) {
             );
     };
 
-    setTimeout(function () {
+    $timeout(function () {
         myService.init();
     },2000);
 }
